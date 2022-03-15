@@ -5,5 +5,5 @@ for a in sInput:
         dict [a] += 1
     else:
         dict [a] = 1
-        Sorted = sorted (dict.items())
-print (Sorted)
+#Sorted = sorted (dict.items())
+print (sorted(dict, key=dict.get, reverse=True))
