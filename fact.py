@@ -1,4 +1,3 @@
-#0 1 1 2 3 5 8 13 21
 def input_int (prompt, err = "Введено не число"):
     isNumber = False
     while not isNumber:
@@ -9,13 +8,16 @@ def input_int (prompt, err = "Введено не число"):
         except:
             print (err)
     return a
+def fact (x):
+    f = 1
+    for i in range(2, x + 1, 1):
+    #    print (i)
+        f = f * i
+    return f
+def fact_ex (x):
+    if x == 1: return 1
+    else: return x * fact_ex (x - 1)
 a = input_int ("Введите число ")
-x, y = [0, 1]
-while a > x:
-    z = x + y
-    #print (z)
-    x, y = [y, z]
-if a == x:
-    print ("Число Фибоначчи")
-else:
-    print ("Не число Фибоначчи")
+print (fact_ex(a))
+print (fact_ex(3))
+print (fact_ex(5))
