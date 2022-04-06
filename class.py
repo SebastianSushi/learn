@@ -55,9 +55,9 @@ class Human:
             pass
         else:
             if "f" == self.gender:
-                if not random.randint (0, 49): self.kill()
+                if not random.randint (0, 4): self.kill()
             else:
-                if not random.randint (0, 19): self.kill()
+                if not random.randint (0, 1): self.kill()
     def __str__ (self):
         return ("%s, birth=%d, alive=%d, preg=%d" % (self.gender, self.birthdate, self.alive, self.pregnant))
 
