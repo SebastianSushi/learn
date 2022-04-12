@@ -40,10 +40,10 @@ class Human:
         if self.gender == "f" and 18 <= self.age(currentdate) <= 35:
             no = 0
             for x in hum:
-                if x.alive and x.gender == "m" and 18 <= x.age(currentdate) <= 40 and not (self.dad is x.dad and self.mom is x.mom):
+                if x.alive and x.gender == "m" and 18 <= x.age(currentdate) <= 40 and not (self.dad is x.dad or self.mom is x.mom):
                     no = x
                     break
-            if no and not random.randint (0, 6):
+            if no and not random.randint (0, 4):
                  self.pregnant = Human(currentdate + 1, no, self)
         if 0 <= self.age(currentdate) < 20:
             if "f" == self.gender:
@@ -68,8 +68,8 @@ for i in range (100):
     h = Human(0, i, -i)
     humans.append (h)
 curdate = 0
+print ("Curdate, Alive, Fem, Male, Age")
 while True:
-    print ("=========год №", curdate)
     AliveCount = 0
     FemCount = 0
     Average = 0
@@ -81,6 +81,6 @@ while True:
             if x.gender == "f":
                 FemCount += 1
             Average += x.age(curdate)
-    print ("Alive=%d, Fem=%d, Male=%d, Age=%d" % (AliveCount, FemCount, AliveCount - FemCount, Average / AliveCount if AliveCount else 0))
+    print ("%d, %d, %d, %d, %d" % (curdate, AliveCount, FemCount, AliveCount - FemCount, Average / AliveCount if AliveCount else 0))
     curdate += 1
     if AliveCount == 0: break
