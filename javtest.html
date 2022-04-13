@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test JavaScript</title>
+</head>
+<body>
+<style>
+    p#error {
+        color:red;
+        font-size: larger;
+        font-weight: bold;
+        ddisplay: inline;
+    }
+</style>
+<input id="age" type="text">
+<button onclick="go_func();">Go</button>
+<p id="error"></p>
+<p id="error">E</p>
+<p>test</p>
+<script>
+function go_func() {
+    let x;
+    x = Number(document.getElementById("age").value);
+    if (isNaN(x)) document.getElementById("error").innerText = "Введено не число";
+    else document.getElementById("error").innerText = "";
+    //x = Number (x);
+    if (6 == x) {
+        x = 7;
+    } else {
+        x += 6;
+    }
+    document.getElementById("age").value = x;
+}
+</script>
+</body>
+</html>
