@@ -6,17 +6,21 @@
 <body>
 <style>
     p#error {
-        color:red;
+        color:rgb(255, 0, 0);
         font-size: larger;
         font-weight: bold;
-        ddisplay: inline;
+        display: inline;
     }
 </style>
 <input id="age" type="text">
-<button onclick="go_func();">Go</button>
+<button id="myBtn" onclick="go_func();">Go</button>
 <p id="error"></p>
-<p id="error">E</p>
-<p>test</p>
+<p id="error">!!!!!!!</p>
+<hr noshade size="5" color="green"/>
+<p id="result">
+
+</p>
+<p></p>
 <script>
 function go_func() {
     let x;
@@ -31,6 +35,12 @@ function go_func() {
     }
     document.getElementById("age").value = x;
 }
+</script>
+<script>
+    var input = document.getElementById("age");
+    input.addEventListener('change', function(event) {
+        go_func();
+    });
 </script>
 </body>
 </html>
